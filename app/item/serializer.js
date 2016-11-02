@@ -3,9 +3,9 @@ import ApplicationSerializer from 'ga-wdi-boston.ember-resources/application/ser
 // import DS from 'ember-data';
 
 export default ApplicationSerializer.extend({
-  serialize () {
-    // TODO: switch text to content when sending to API
-  },
+  // serialize () {
+  //   // TODO: switch text to content when sending to API
+  // },
 
   normalize (model, response) {
     // create new key called 'text',
