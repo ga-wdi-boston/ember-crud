@@ -10,5 +10,9 @@ export default Ember.Component.extend({
       // have access to item here (see line 7), can pass it up thru action chain
       return this.sendAction('toggleDone', this.get('item'));
     },
+
+    delete () {
+      return this.sendAction('delete', this.get('item'));
+    },
   },
 });
