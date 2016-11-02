@@ -1,5 +1,7 @@
 <h2>ListR</h2>
 {{#each model as |list|}}
-{{!-- send only title as data down to the card component(not entire list obj), bind  --}}
-  {{listr-list/card title=list.title}}
+  {{!-- send only title as data down to the card component(not entire list obj), bind  --}}
+  {{#link-to 'list' list}}
+    {{listr-list/card title=list.title}}
+  {{/link-to}}
 {{/each}}
