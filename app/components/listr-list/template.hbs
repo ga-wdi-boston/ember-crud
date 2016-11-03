@@ -4,3 +4,15 @@
     {{listr-list/item item=item toggleDone='toggleItemDone' delete='deleteItem'}}
   {{/each}}
 </ul>
+
+
+<form {{action "createItem" on="submit"}}>
+  {{input placeholder="New item"
+          value=newItem.content}}
+</form>
+{{!-- <form {{action "createItem" on="submit"}}>
+  {{input type="submit"
+          placeholder="New item"
+          value=newItem.text}}
+
+</form> --}}

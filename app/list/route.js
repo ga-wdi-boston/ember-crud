@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  model(params){
+  model (params) {
     return this.get('store').findRecord('list', params.list_id);
   },
 
@@ -14,6 +14,11 @@ export default Ember.Route.extend({
     deleteItem (item) {
       item.destroy();
       item.save();
+    },
+
+    createItem (data) {
+      let item = this.get('store').createRecord('item', data);
+      return item.save();
     },
   },
 });
