@@ -1,7 +1,7 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('listr-list/item', 'Integration | Component | listr list/item', {
+moduleForComponent('listr-list/edit', 'Integration | Component | listr list/edit', {
   integration: true,
 });
 
@@ -9,17 +9,15 @@ test('it renders', function (assert) {
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
 
-  this.set('item', { content: 'bob' });
+  this.render(hbs`{{listr-list/edit}}`);
 
-  this.render(hbs`{{listr-list/item item=item}}`);
-
-  assert.equal(this.$('span.list-item').text().trim(), 'bob');
+  assert.equal(this.$().text().trim(), 'Save\n  Cancel');
 
   // // Template block usage:
   // this.render(hbs`
-  //   {{#listr-list/item}}
+  //   {{#listr-list/edit}}
   //     template block text
-  //   {{/listr-list/item}}
+  //   {{/listr-list/edit}}
   // `);
   //
   // assert.equal(this.$().text().trim(), 'template block text');
