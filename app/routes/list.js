@@ -8,6 +8,15 @@ export default Ember.Route.extend({
    toggleItemDone(item) {
      item.toggleProperty('done');
      item.save();
-   }
+   },
+   deleteitem(item) {
+     console.log("got to route");
+     item.destroyRecord();
+   },
+   createItem(data) {
+     console.log('ROUTE!!!');
+     let item = this.get('store').createRecord('item', data);
+     item.save();
+   },
  }
 });
