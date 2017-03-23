@@ -1,8 +1,9 @@
-
-
 {{#each model as |list|}}
-{{shopping-list/card list=list}}
+  {{shopping-list/card
+    list=list
+    edit='editList'
+  }}
 {{/each}}
-
-
+<br/>
+<h4>{{#link-to 'index'}}Back{{/link-to}}</h4>
 {{outlet}}

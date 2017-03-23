@@ -6,25 +6,26 @@ export default Ember.Component.extend({
   listDetailHidden: false,
   newItem: {
     content: null,
-    done: false
+    done: false,
   },
   actions: {
-    deleteItem(item) {
-      return this.sendAction('deleteItem', item);
-    },
-    toggleItemDone(item) {
-      return this.sendAction('toggleItemDone', item);
-    },
-    toggleListDetail() {
+    toggleListDetail () {
       return this.toggleProperty('listDetailHidden');
     },
-    createItem() {
-      console.log('sending action');
+
+    toggleItemDone (item) {
+      return this.sendAction('toggleItemDone', item);
+    },
+
+    deleteItem (item) {
+      this.sendAction('deleteItem', item);
+    },
+
+    createItem () {
       let data = this.get('newItem');
       data.list = this.get('list');
       this.sendAction('createItem', data);
-      this.set('newItem.content', null);
-    }
-
+      this.set('newItem.content', null); //@Louis-- this clears/resets the form after the action is complete!
+    },
   },
 });
